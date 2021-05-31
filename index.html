@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="index.js" defer></script>
+  </head>
+  <style>
+    .disabled {
+      color: rgb(230, 87, 87);
+      transition: color 3s ease;
+    }
+  </style>
+  <body>
+    <h1>Hello from HTML!</h1>
+    <div id="app">
+      <h3>{{ message }}</h3>
+      <p>{{ name }}</p>
+      <button v-on:click="changeMessage">Change Message</button>
+      <input type="text" v-model="name" />
+      <div>
+        <button v-on:click="showInfo = !showInfo">Toggle Info</button>
+        <p v-bind:class="{disabled: showInfo}">Extra Information</p>
+      </div>
+      <div v-for="color in colors">
+        <p>{{ color }}</p>
+      </div>
+      <input type="text" v-model="newColor" />
+      <button v-on:click="addNewColor">Add New Color</button>
+    </div>
+  </body>
+</html>
