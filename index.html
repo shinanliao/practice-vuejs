@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Practice Vue.js</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="index.js" defer></script>
   </head>
   <style>
@@ -30,6 +31,10 @@
       </div>
       <input type="text" v-model="newColor" />
       <button v-on:click="addNewColor">Add New Color</button>
+      <div><button v-on:click="loadTodos">Load Todos</button></div>
+      <div v-for="todo in todos">
+        <p>{{ todo }}</p>
+      </div>
     </div>
   </body>
 </html>
